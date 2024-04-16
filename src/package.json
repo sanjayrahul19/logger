@@ -1,14 +1,18 @@
 {
   "name": "@sanjayrahul/logger",
   "version": "1.0.0",
-  "description": "",
+  "description": "Middleware for logging API requests and responses",
   "main": "index.js",
   "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanjayrahul19/logger"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
-  "keywords": ["logger"],
+  "keywords": ["api","logger","middleware"],
   "author": "sanjayrahul",
   "license": "ISC"
 }
