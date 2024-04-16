@@ -13,16 +13,7 @@ async function createLog(req, res, next) {
         res.on('finish', async () => {
             const endTime = new Date();
             const processTime = endTime - startTime;
-
-            // Extract user_id and session
-            let user_id = '';
-            let session = '';
-            if (req.headers.authorization) {
-                const authToken = req.headers.authorization;
-                session = authToken?.split(' ')[1];
-                const user = await Session.findOne({ session_token: session });
-                user_id = String(user?.user_id) || '';
-            }
+            
 
             // Create log data
             const logData = {
@@ -39,8 +30,6 @@ async function createLog(req, res, next) {
                 remote_address: req.connection.remoteAddress,
                 request_ip: req.ip,
                 response_message: responseData?.message || '',
-                user_id,
-                session,
                 process_time: `${processTime} ${unitCalculation(processTime)}`,
             };
             return logData
