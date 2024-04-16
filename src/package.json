@@ -1,6 +1,6 @@
 {
   "name": "@sanjayrahul/logger",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Middleware for logging API requests and responses",
   "main": "index.js",
   "type": "commonjs",
